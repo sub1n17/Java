@@ -14,7 +14,4 @@ public interface RemoteControl {
 	public void soundUp(); 
 	public void soundDown(); 
 	
-	
-	
-	
 }

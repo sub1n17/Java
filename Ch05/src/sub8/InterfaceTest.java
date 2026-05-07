@@ -1,5 +1,11 @@
 package sub8;
 
+interface Person {
+	public abstract void hello();
+	public void info();
+}
+
+
 public class InterfaceTest {
 	
 	public static void main(String[] args) {
@@ -39,5 +45,22 @@ public class InterfaceTest {
 		stv.process();
 		stv.save();
 		
+		
+		// 인터페이스 활용 4 : 익명 객체 사용
+		Person kim = new Person() {
+			
+			@Override
+			public void info() {
+				System.out.println("김유신");
+			}
+			
+			@Override
+			public void hello() {
+				System.out.println("안녕하세요");
+			}
+		};
+		
+		kim.hello();
+		kim.info();
 	}
 }
