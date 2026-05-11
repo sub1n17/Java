@@ -8,7 +8,7 @@ public class ExceptionTest {
 	public static void main(String[] args) {
 		
 		//-----------------------------------------
-		// 실행 예외(런타임 발생)
+		// 실행 예외(런타임 발생) : 개발 중 생기는 에러
 		//-----------------------------------------
 		
 		// 예외상황1 - 어떤 수를 0으로 나눌때
@@ -67,14 +67,17 @@ public class ExceptionTest {
 		}
 		
 		//-----------------------------------------
-		// 일반 예외(컴파일 타임 발생)
+		// 일반 예외(컴파일 타임 발생) : 미리 대비 안 하면 컴파일 자체가 안 되는 예외, 실행 전에 미리 체크되는 예외, 반드시 대비해야 함
 		//-----------------------------------------
 		
 		//Tiger tiger = new Tiger(); // 명시적 방법
 		
 		try {
 			// 클래스 객체 동적 생성
-			Class tigerClass = Class.forName("sub1.Tigerr"); // 문자열 정보를 가지고 클래스 정보 로드
+			Class tigerClass = Class.forName("sub1.Tiger"); // 문자열 정보를 가지고 클래스 정보 로드
+			// ㄴ> Class.forName("sub1.Tiger") : 대표적인 일반 예외 발생 메서드 (문자열로 클래스를 찾는 건 실패할 수 있기 때문에)
+			// 그래서 자바는 컴파일 단계에서 위험하니까 try-catch 또는 throws 하라고 에러를 내고
+			// 안 하면 Unhandled exception: ClassNotFoundException 컴파일 자체가 막힘
 			Constructor<?> constructor = tigerClass.getDeclaredConstructor();
 			Tiger tiger = (Tiger) constructor.newInstance();
 			
