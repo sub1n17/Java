@@ -1,4 +1,7 @@
-package sub2;
+package sub3;
+
+import sub3.MinusException;
+import sub3.Score;
 
 /*
  * 날짜 2026/05/11
