@@ -32,7 +32,7 @@ public class FileTest {
 			System.out.println("file1 절대 경로 : " + file1.getAbsolutePath());
 			System.out.println("file2 절대 경로 : " + file2.getAbsolutePath());
 			
-			//
+			// 파일 삭제
 			file1.delete();
 			file2.delete();
 			
